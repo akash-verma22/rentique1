@@ -13,6 +13,7 @@ import {
 import "@aws-amplify/ui-react/styles.css";
 import { useRouter, usePathname } from "next/navigation";
 
+// https://docs.amplify.aws/gen1/javascript/tools/libraries/configure-categories/
 Amplify.configure({
   Auth: {
     Cognito: {
@@ -30,7 +31,7 @@ const components = {
         <Heading level={3} className="!text-2xl !font-bold">
           RENT
           <span className="text-secondary-500 font-light hover:!text-primary-300">
-            IQUE
+            IFUL
           </span>
         </Heading>
         <p className="text-muted-foreground mt-2">
