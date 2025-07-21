@@ -32,7 +32,7 @@ const HeroSection = () => {
         dispatch(
           setFilters({
             location: trimmedQuery,
-            coordinates: [lat, lng],
+            coordinates: [lng, lat],
           })
         );
         const params = new URLSearchParams({
@@ -40,7 +40,7 @@ const HeroSection = () => {
           lat: lat.toString(),
           lng: lng,
         });
-        router.push(`/search?${params.toString()}`);
+        router.push("/tenants/favorites");
       }
     } catch (error) {
       console.error("error search location:", error);

@@ -31,7 +31,7 @@ const components = {
         <Heading level={3} className="!text-2xl !font-bold">
           RENT
           <span className="text-secondary-500 font-light hover:!text-primary-300">
-            IFUL
+            IQUE
           </span>
         </Heading>
         <p className="text-muted-foreground mt-2">
@@ -151,7 +151,7 @@ const Auth = ({ children }: { children: React.ReactNode }) => {
   // Redirect authenticated users away from auth pages
   useEffect(() => {
     if (user && isAuthPage) {
-      router.push("/");
+      router.push("/tenants/favorites");
     }
   }, [user, isAuthPage, router]);
 
