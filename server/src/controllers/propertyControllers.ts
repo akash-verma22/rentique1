@@ -8,7 +8,7 @@ import { Location } from "@prisma/client";
 
 const prisma = new PrismaClient();
 const s3Client = new S3Client({
-    region: process.env.AWS_REGION
+    region: "ap-south-1"
 });
 
 export const getProperties = async (
