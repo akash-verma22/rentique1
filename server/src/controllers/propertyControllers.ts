@@ -288,8 +288,8 @@ export const createProperty = async (
   
       res.status(201).json(newProperty);
     } catch (err: any) {
-        // console.error("Error in createProperty",err);
-        // res
+        console.error("Error in createProperty",err);
+        res
         .status(500)
         .json({ message: `Error creating property: ${err.message}` });
     }
