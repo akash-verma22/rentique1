@@ -15,16 +15,12 @@ import applicationRoutes from "./routes/applicationRoutes";
 dotenv.config();
 const app = express();
 
-// Increase payload limits for JSON and URL-encoded bodies
 app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ extended: false, limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
-
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ extended: false, limit: '25mb' }));
 
 app.use(cors({
   origin: 'https://main.d2po9hmjuf17hx.amplifyapp.com',
@@ -32,7 +28,8 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.options('*', cors()); // Handle preflight
+app.options('*', cors()); // Preflight
+
 
 /* ROUTES */
 app.get("/", (req, res) => {
