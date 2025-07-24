@@ -11,7 +11,6 @@ import managerRoutes from "./routes/managerRoutes";
 import propertyRoutes from "./routes/propertyRoutes";
 import leaseRoutes from "./routes/leaseRoutes";
 import applicationRoutes from "./routes/applicationRoutes";
-
 /* CONFIGURATIONS */
 dotenv.config();
 const app = express();
@@ -21,7 +20,12 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
+app.use(cors({
+  origin: 'https://main.d2po9hmjuf17hx.amplifyapp.com',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+app.options('*', cors()); // Handle preflight
 
 /* ROUTES */
 app.get("/", (req, res) => {
