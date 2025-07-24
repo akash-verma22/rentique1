@@ -195,9 +195,9 @@ export const createProperty = async (
   ): Promise<void> => {
     try {
       const files = req.files as Express.Multer.File[];
-        if (!files || files.length === 0) {
-          return res.status(400).json({ message: "No photos uploaded." });
-        }
+        // if (!files || files.length === 0) {
+        //   return res.status(400).json({ message: "No photos uploaded." });
+        // }
       const {
         address,
         city,
@@ -288,8 +288,8 @@ export const createProperty = async (
   
       res.status(201).json(newProperty);
     } catch (err: any) {
-        console.error("Error in createProperty",err);
-        res
+        // console.error("Error in createProperty",err);
+        // res
         .status(500)
         .json({ message: `Error creating property: ${err.message}` });
     }
