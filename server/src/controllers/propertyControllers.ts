@@ -222,7 +222,8 @@ export const createProperty = async (
             params: uploadParams,
           }).done();
   
-          return `https://${process.env.S3_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${uploadParams.Key}`;
+         return `https://${process.env.S3_BUCKET_NAME}.s3.ap-south-1.amazonaws.com/${uploadParams.Key}`;
+
         })
       );
   
