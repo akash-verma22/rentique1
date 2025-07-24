@@ -8,8 +8,12 @@ import multer from "multer";
 import { authMiddleware } from "../middleware/authMiddleware";
 
 const storage = multer.memoryStorage();
-const upload = multer({storage:storage,
-                      limits:{fileSize:10*1024*1024});
+
+const upload = multer({
+  storage: storage,
+  limits: { fileSize: 10 * 1024 * 1024 },
+});
+
 
 const router = express.Router();
 
